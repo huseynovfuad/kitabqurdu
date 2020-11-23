@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+
+    <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+        <!--TOP AUTHERS START-->
+        <div class="container">
+            <div class="row">
+            {% if books %}
+                {% for book in books %}
+                    <!--PRODUCT GRID START-->
+                	<div class="col-md-3 col-sm-6">
+                    	<div class="best-seller-pro">
+                        	<figure>
+                            	<img style="width: 211px;height: 314px;" alt="" src="{{book.image_url}}">
+                            </figure>
+                            <div class="kode-text">
+                            	<h3><a href="#">{{ book.title }}</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                            	<h3>{{ book.title }}</h3>
+                                <div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+                                <p class="price">{{ book.price }}</p>
+                                <a class="add-to-cart" href="{{ book.detail_url }}" target="_blank">Detail</a>
+                            </div>
+                        </div>
+                    </div><br>
+                    <!--PRODUCT GRID END-->
+        {% endfor %}
+            {% endif %}
+            </div>
+
+
+            <!--PAGINATION START
+            <nav style="padding-bottom: 50px;">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            PAGINATION END-->
+        </div>
+        <!--TOP AUTHERS END-->
+    </div>
+    <!--CONTENT END-->
+
+
+
+{% endblock %}

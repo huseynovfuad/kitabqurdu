@@ -1,0 +1,1 @@
+web: gunicorn kitabqurdu.wsgi --log-file -
